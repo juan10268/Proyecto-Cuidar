@@ -1,0 +1,35 @@
+<h1>lista especialista</h1>
+<p *ngIf="!(especialista && especialista.length)">
+  no existen registros
+</p>
+
+<table class="table" *ngIf="(especialista && especialista.length)">
+  <thead>
+    <tr>
+      <th>especialista </th>
+      <th>especialidad</th>
+      <th>fecha ingreso</th>
+      <th>fecha retiro</th>
+      <th>vinculacion</th>
+      <th>acciones</th>
+      
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let especialista of especialista ">
+      
+      <td>{{especialista.especialistaId}}</td>
+      <td>{{especialista.especialidadId}}</td>
+      <td>{{especialista.especialistaFechaIngreso}}</td>
+      <td>{{especialista.especialistaFechaRetiro}}</td>
+      <td>{{especialista.tipo_vinculacion}}</td>
+      
+      <td>
+        <button class="btn btn-primary" [routerLink]='["/actualizarespecialista/" + especialista.especialistaId]'>editar</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

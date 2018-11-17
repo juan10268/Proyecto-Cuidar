@@ -1,0 +1,66 @@
+
+<h1>Agregar Cita.</h1>
+<form class="col s12 border border-dark" #registrarCita="ngForm" (ngSubmit)="OnSubmit(registrarCita);">
+    <form novalidate class="form-horizontal" (ngSubmit)="agregarCita(agregarCita.value)"
+    #agregarCitaForm="ngForm">
+    <div style="width: 1100px;position: relative;margin-left:auto;margin-right: auto;">
+    <div class="row">        
+      <div class="input-field col s6">
+        <label for="pacienteID" class="col-lg-2 control-label"></label>
+        <div class="col-lg-10">
+          <input type="text" class="validate" id="pacienteID" name="pacienteID" placeholder="
+          Identificacion Del Paciente:" ngModel #pacienteID="ngModel" required minlength="6">
+          <div *ngIf="pacienteID.errors?.required && pacienteID.touched" class="alert alert-danger">                  
+          </div>
+          <div *ngIf="pacienteID.errors?.minlength && pacienteID.touched" class="alert alert-danger" style="background-color:#AEA822;"> minimo 6 caracteres.
+          </div>
+        </div>
+      </div>
+  
+      <div class="input-field col s6">
+          <label for="especialistaID" class="col-lg-2 control-label"></label>
+          <div class="col-lg-10">
+            <input type="text" class="validate" id="especialistaID" name="especialistaID" placeholder="
+            Identificacion Del Especialista:" ngModel #especialistaID="ngModel" required minlength="6">
+            <div *ngIf="especialistaID.errors?.required && especialistaID.touched" class="alert alert-danger">                  
+            </div>
+            <div *ngIf="especialistaID.errors?.minlength && especialistaID.touched" class="alert alert-danger" style="background-color:#AEA822;"> minimo 6 caracteres.
+            </div>
+          </div>
+        </div>         
+  
+        <div class="input-field col s4">
+          <input type="date" class="validate" name="citaFecha" [(ngModel)]="citaFecha" required>
+          <label>Fecha De La Cita</label>
+        </div>
+  
+        <div class="input-field col s4">
+          <input type="time" class="validate" name="citaHora" [(ngModel)]="citaHora" required>
+          <label>Hora De La Cita</label>
+        </div>
+        <div class="input-field col s4">
+          <div>
+              <label for="myListOptions">estado cita</label>
+          <select class="browser-default" name="estadoCita" [(ngModel)]="estadoCita">
+            <option *ngFor="let estados of estadosCita" [ngValue]="estados.EstadoCitaID">{{estados.EstadoCitaNombre}}</option>
+            
+          </select>
+        </div>
+        </div>   
+      </div>
+
+      <div class="row">
+        <div class="center-align input-field col s4">
+          <button class="btn-large btn-submit" type="submit"[disabled]="agregarCitaForm.invalid">Agregar Cita</button>
+        </div>
+        <div class="center-align input-field col s4">
+          <button  class="btn-large btn-submit" type="button" [routerLink]='["/listarespecialista"]'>Cancelar</button>
+        </div>
+      </div>
+
+    </div>
+    </form>
+ 
+ 
+    
+  

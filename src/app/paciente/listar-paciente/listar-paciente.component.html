@@ -1,0 +1,38 @@
+<h1>lista pacientes</h1>
+<p *ngIf="!(paciente && paciente.length)">
+  no existen registros
+</p>
+
+<table class="table" *ngIf="(paciente && paciente.length)">
+  <thead>
+    <tr>
+        <th>Documento</th>
+      <th>rango salarial</th>
+      <th>fecha inicio</th>
+      <th>fecha retiro</th>
+      <th>tipo vinculacion</th>      
+      <th>activacion</th>
+      <th>acciones</th>
+      
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let paciente of paciente ">
+      <td>{{paciente.personasId}}</td>
+      <td>{{paciente.rangosalario}}</td>
+      <td>{{paciente.fechaingreso}}</td>
+      <td>{{paciente.fecharetiro}}</td>
+      <td>{{paciente.vinculacionTipoId}}</td>
+      <td>{{paciente.activacionId}}</td>
+      
+      <td>
+        <button class="btn btn-primary" [routerLink]='["/actualizarpaciente/"+ paciente.personasId]'>editar</button>
+    
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+

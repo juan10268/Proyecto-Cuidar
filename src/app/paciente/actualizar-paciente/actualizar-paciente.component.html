@@ -1,0 +1,61 @@
+<h1>editar Paciente</h1>
+<form class="form-horizontal" #editarPaciente="ngForm" (ngSubmit)="OnSubmit(editarPaciente);">
+  <div *ngFor="let paciente of pacientes">
+  <div class="row">
+      <div class="input-field col s5">
+        <input type="number" placeholder="Identificación" readonly="readonly" name="personasId" [(ngModel)]="paciente.personasId" >
+        <label>Identificacion</label>
+      </div>
+      <div class="input-field col s3">
+        <div>
+          <label for="myListOptions">rango salarial</label>
+        <select class="browser-default border border-dark" name="rangosalario" [(ngModel)]="paciente.rangosalario">
+          <option *ngFor="let rango of rangosalarial" [ngValue]="rango.RangoSalario_Id">{{rango.RangoSalario_Nombre}}</option>
+        </select>
+      </div>
+    </div>
+    </div> 
+      
+    <div class="row">
+  <div class="input-field col s3">
+        <div>
+          <label for="myListOptions">tipo de vinculacion</label>
+        <select class="browser-default border border-dark" name="vinculacionTipoId" [(ngModel)]="paciente.vinculacionTipoId">
+          <option *ngFor="let vinculacion of vinculaciones" [ngValue]="vinculacion.vinculacionTipoId">{{vinculacion.vinculacionTipoNombre}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="input-field col s3">
+      <div>
+        <label for="myListOptions">estado de activacion</label>
+      <select class="browser-default border border-dark" name="activacionId" [(ngModel)]="paciente.activacionId">
+        <option *ngFor="let estado of estadoactivacion" [ngValue]="estado.estado_activacion_Id">{{estado.estado_activacion_Nombre}}</option>
+      </select>
+    </div>
+  </div>
+    <div class="input-field col s3">
+      <div hidden>
+        <input type="date"  name="fechaingreso" [(ngModel)]="paciente.fechaingreso" >
+      <label>Fecha de ingreso</label>
+    </div>
+  </div>
+  <div class="input-field col s3">
+    <div>
+      <input type="date"  name="fecharetiro" [(ngModel)]="paciente.fecharetiro">
+    <label>Fecha de retiro</label>
+  </div>
+</div>
+  </div>
+    <div class="row">
+      <div class="center-align input-field col s4">
+        <button class="btn-large btn-submit" type="submit">Guardar</button>
+
+      </div>
+      <div class="center-align input-field col s4">
+        <button  class="btn-large btn-secondary" type="button" [routerLink]='["/listarpaciente"]'>Cancelar</button>
+
+      </div>
+    </div>
+
+  </div>   
+</form>

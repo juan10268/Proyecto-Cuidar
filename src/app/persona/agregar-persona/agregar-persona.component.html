@@ -1,0 +1,105 @@
+<h1> personas</h1>
+
+<form class="form-horizontal" #form="ngForm">
+    <div class="row">
+        <div class="input-field col s3" > 
+            <div>
+                <label for="myListOptions">tipo de documento</label>
+          <select class="browser-default border border-dark" name="personaTipoDocumento" [(ngModel)]="personaTipoDocumento">
+              
+            <option *ngFor="let documento of documentos" [ngValue]="documento.documentoTipoId">{{documento.documentoTipoNombre}}</option>
+          </select>
+        </div>
+        </div>
+      <div class="input-field col s5">
+        <input type="number" class="validate" name="personaID" [(ngModel)]="personaID" required>
+        <label>Identificacion</label>
+      </div>
+  
+      
+      <div class="input-field col s3">
+        <input type="date" class="validate" name="personaFechaNacimiento" [(ngModel)]="personaFechaNacimiento" required>
+        <label>Fecha de nacimiento</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <input type="text" class="validate" name="personaNombre" [(ngModel)]="personaNombre" required>
+        <label data-error="Nombre invalido">Nombre</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="text" class="validate" name="personaApellido1" [(ngModel)]="personaApellido1" required>
+        <label data-error="Nombre invalido">Primer Apellido</label>
+        </div>
+      <div class="input-field col s4">
+        <input type="text" class="validate" name="personaApellido2" [(ngModel)]="personaApellido2" required>
+        <label data-error="Nombre invalido">Segundo Apellido</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" class="validate" name="personaDireccion" [(ngModel)]="personaDireccion" required>
+        <label data-error="Nombre invalido">Direccion</label>
+      </div>
+      <div class="input-field col s6">
+        <input type="text" class="validate" name="personaTelefono" [(ngModel)]="personaTelefono" required>
+        <label data-error="Nombre invalido">Telefono</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <div>
+          <label for="myListOptions">Estado civil</label>
+          <select class="browser-default border border-dark" name="personaEstadoCivil" [(ngModel)]="personaEstadoCivil">
+            <option *ngFor="let estado of estadocivil" [ngValue]="estado.estado_civil_Id">{{estado.estado_civil_Nombre}}</option>
+          </select>
+        </div>
+    </div>
+      <div class="input-field col s4">
+          <div>
+          <label for="myListOptions">Escolaridad</label>
+          <select class="browser-default border border-dark" name="personaEscolaridad" [(ngModel)]="personaEscolaridad">
+        <option *ngFor="let escolaridad of escolaridades" [ngValue]="escolaridad.escolaridadId">{{escolaridad.escolaridadNombre}}</option>
+      </select>
+      </div>
+    </div>
+      <div class="input-field col s4">
+      <div>
+          <label for="myListOptions">genero</label>
+         <select class="browser-default border border-dark" name="personaGenero" [(ngModel)]="personaGenero" required>
+          <option  value="1">Femenino</option>
+          <option  value="2">Masculino</option>
+        </select>
+       </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <div>
+              <label for="myListOptions">Departamento</label>
+              <select class="browser-default border border-dark" name="personaDepartamento" [(ngModel)]="personaDepartamento" (ngModelChange)="getCuidadDepartamento($event)">
+                <option *ngFor="let departamento of departamentos" [ngValue]="departamento.departamentoId">{{departamento.departamentoNombre}}</option>
+              </select>
+            </div>
+          </div>
+      <div class="input-field col s4">
+          <div>
+              <label for="myListOptions">cuidad</label>
+        <select class="browser-default border border-dark" name="personaCiudad" [(ngModel)]="personaCiudad">
+          <option *ngFor="let ciudad of ciudades" [ngValue]="ciudad.ciudadId">{{ciudad.ciudadNombre}}</option>
+        </select>
+  
+            </div>
+      
+        </div>
+       
+      </div>
+    <div class="row">
+      <div class="center-align input-field col s4">
+        <button class="btn-large btn-submit" type="submit" (click)="OnSubmit(form)">Guardar</button>
+      </div>
+      <div class="center-align input-field col s4">
+        <button  class="btn-large btn-secondary" type="button" [routerLink]='["/listarpersona"]'>Cancelar</button>
+       </div>
+    </div>
+  </form>

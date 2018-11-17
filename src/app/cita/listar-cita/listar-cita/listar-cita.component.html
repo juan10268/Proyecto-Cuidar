@@ -1,0 +1,91 @@
+<div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h4>Citas</h4>
+        <h5>Modulo de visualizacion y cancelacion de citas</h5>
+      </div>
+      <div class="row">
+        <div class="input-field col s9">
+          <input type="text" class="validate" name="pacienteID" [(ngModel)]="pacienteID" maxlength="10">
+        </div>
+        <div class="input-field col s3">
+          <button class="btn-small btn-submit" (click)="buscarPaciente(pacienteID)" type="submit">Buscar</button>
+        </div>
+      </div>
+      <form class="col s12 border border-dark" *ngFor="let paciente of infoPaciente">
+        <div class="row">
+          <div class="input-field col s4">
+            <input readonly="readonly" name="personaNombre">
+            <label>{{paciente.personaNombre}}</label>
+          </div>
+          <div class="input-field col s4">
+            <input readonly="readonly" name="personaApellido1">
+            <label>{{paciente.personaApellido1}}</label>
+          </div>
+          <div class="input-field col s4">
+            <input readonly="readonly" name="personaApellido2">
+            <label>{{paciente.personaApellido2}}</label>
+          </div>
+          <div class="input-field col s4">
+            <input readonly="readonly" name="personaFechaNacimiento">
+            <label>{{paciente.personaFechaNacimiento}}</label>
+          </div>
+          <div class="input-field col s4">
+            <input readonly="readonly" name="personaTelefono">
+            <label>{{paciente.personaTelefono}}</label>
+          </div>
+          <div class="input-field col s4">
+            <input readonly="readonly" name="personaDireccion">
+            <label>{{paciente.personaDireccion}}</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <h5>Citas</h5>
+          </div>
+          <table>
+            <thead>
+              <th>Identificacion de la cita</th>
+              <th>Fecha de la cita</th>
+              <th>Hora de la cita</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let k of tablaCitaPaciente">
+                <td>{{k.citaID}}</td>
+                <td>{{k.citaFecha}}</td>
+                <td>{{k.citaHora}}</td>
+                <a (click)="citaDetalles(k.citaID)" class="waves-effect waves-light btn-small">Detalles</a>
+                <a (click)="citaDetalles(k.citaID)" class="waves-effect waves-light btn-small">Modificar</a>
+              </tr>
+            </tbody>
+          </table>
+          <div class="modal" materialize="modal" [materializeParams]="model1Params" [materializeActions]="modalActions1">
+            <div class="modal-content">
+              <div class="container" *ngFor="let c of detallesCita">
+                <form class="col s12 border border-dark" *ngFor="let c of detallesCita">
+                  <h5 class="center-align">Detalles de la cita:</h5>
+                  <div class="row">
+                    <div class="input-field col s12">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s4">
+                      <input readonly="readonly" name="citaID">
+                      <label>{{c.citaID}}</label>
+                    </div>
+                    <div class="input-field col s4">
+                      <input readonly="readonly" name="citaEspecialista">
+                      <label>{{c.EspecialistaID}}</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <a (click)="closeModal()" class="center-align waves-effect waves-light btn-small">Salir</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>

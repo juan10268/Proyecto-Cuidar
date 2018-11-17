@@ -1,0 +1,49 @@
+<h1>lista personas</h1>
+<p *ngIf="!(persona && persona.length)">
+  no existen registros
+</p>
+
+<table class="table" *ngIf="(persona && persona.length)">
+  <thead>
+    <tr>
+        <th>Tipo Documento</th>
+      <th>documento </th>
+      <th>nombre</th>
+      <th>apellido1</th>
+      <th>apellido2</th>
+      <th>fecha nacimiento</th>
+      <th>direccion</th>
+      <th>telefono</th>
+      <th>EstadoCivil </th>
+      <th> Genero</th>
+      <th>Ciudad</th>
+      <th>escolaridad</th>
+      <th>departamento</th>
+      <th>acciones</th>
+      
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr *ngFor="let persona of persona ">
+      <td>{{persona.personaTipoDocumento}}</td>
+      <td>{{persona.personaID}}</td>
+      <td>{{persona.personaNombre}}</td>
+      <td>{{persona.personaApellido1}}</td>
+      <td>{{persona.personaApellido2}}</td>
+      <td>{{persona.personaFechaNacimiento}}</td>
+      <td>{{persona.personaDireccion}}</td>
+      <td>{{persona.personaTelefono}}</td>
+      <td>{{persona.personaEstadoCivil}}</td>
+      <td>{{persona.personaGenero}}</td>
+      <td>{{persona.personaCiudad}}</td>
+      <td>{{persona.personaEscolaridad}}</td>
+      <td>{{persona.personaDepartamento}}</td>
+      <td>
+        <button button type="button" class="btn btn-info" [routerLink]='["/actualizarpersona/" + persona.personaID]'>editar</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>

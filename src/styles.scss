@@ -1,0 +1,181 @@
+/*botones*/
+button.btn-submit{
+  background-color: #21A359; 
+  color: #FFFFFF;  
+  width: 100%;
+  border-radius: 20px 20px 20px 20px;
+}
+button.btn-submit:focus,button.btn-submit:hover{
+  background-color:#007034; 
+  border-radius: 20px 20px 20px 20px;
+}
+
+p { 
+  color: #007034; 
+}
+h1 {
+  color:#007034;  
+  text-align: center;
+}
+p {
+  color:#007034;  
+  font-family: verdana;
+  text-align: center;
+  font-size: 35px;
+}
+
+.page-scroll { 
+  background-color:#007034;
+  color:#FFFFFF;
+}
+
+.routerLinkActive { 
+  background-color: #007034;
+}
+
+/*submenu*/
+.navbar{
+  color: #007034;
+  padding-left:2px; 
+}
+
+nav {
+  color: #FFFFFF;
+  background-color: #007034;
+  width: 100%;
+  height: 75px;
+  line-height: 50px;
+  padding-left:20px;
+}
+
+.nav li li{
+  float: right; 
+}
+
+/*icono home*/
+.icon-bar {
+  width: 100%;
+  background-color:#007034;
+  overflow: auto;
+}
+
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  /*transition: all 0.3s ease;*/
+  color: white;
+  font-size: 50px;
+}
+
+.icon-bar a:hover {
+    background-color: #007034;
+}
+
+.active {
+  background-color: #007034;
+  padding-left:20px;
+}
+
+/*menu en pag principal. (Persona,Pacientes,Citas etc)*/
+ul#menu {
+  background:#007034;
+  float:left;
+  padding: 10px;
+ }
+   
+ ul#menu li {
+  color: #FFFFFF;
+  float: left;
+  list-style: none;
+  margin: 0% 5%;
+  min-width:50px;/*Espacios entre routerLink*/
+ }
+   
+ ul#menu li:hover{
+  color: #FFFFFF;
+  cursor:pointer;
+ }
+
+ ul#menu ul {
+  display: none;
+  position: absolute;
+  top:50px;
+  left:50px;
+  background: #007034;
+  color: #FFFFFF;
+  padding: 5px 0px 5px 5px;
+  margin:0;
+  width: 300px;
+  }
+   
+ ul#menu ul li{
+  float: left;
+  color: #FFFFFF;
+  width:100%;
+  margin:0;
+  background-color: #007034;
+  border-radius: 20px 20px 20px 20px;
+ }
+  
+ ul#menu ul li a{
+  color: #FFFFFF;
+  border-radius: 20px 20px 20px 20px;
+ }
+   
+ ul#menu ul li a:hover{
+  color: #FFFFFF;
+  cursor:pointer;
+ }
+   
+ ul#menu li:hover ul ul,ul#menu li:hover ul ul ul,ul#menu li.iehover ul ul,ul#menu li.iehover ul ul ul {
+  display: none;
+  cursor:pointer;
+ }
+   
+ ul#menu li:hover ul,ul#menu ul li:hover ul,ul#menu ul ul li:hover ul,ul#menu li.iehover ul,ul#menu ul li.iehover ul,ul#menu ul ul li.iehover ul {
+  display: block;
+  cursor:pointer;
+ }
+
+/*bordes redondos del submenu*/
+ul#menu ul {
+  border-radius: 20px 20px 20px 20px;
+}
+
+#main-footer {
+  background: #FFFFFF;
+  color: #21A359;
+  text-align: center;
+  padding: 40px;
+  margin-top: 10px;
+}
+#main-footer p {
+   margin: 0;
+}
+#main-footer a {
+  color: #21A359;
+}
+
+.navbar-link{
+  position:absolute;
+  width:0%;
+  left:100;
+  text-align:center;
+  margin:auto;
+}
+
+#menu { 
+  position: relative; 
+  z-index: 100; 
+  float: left;
+  /*width: 90px;*/ 
+}
+#slider { 
+  position: relative; 
+  width: 100% !important;
+  z-index: 50; 
+  float: left;  
+}
+

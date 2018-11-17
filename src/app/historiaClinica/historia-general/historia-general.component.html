@@ -1,0 +1,40 @@
+<form class="col s12" #HistoriaGeneral="ngForm" (ngSubmit)="enviarHistoriaGeneral(HistoriaGeneral);">
+  <div class="row">
+    <div class="input-field col s6">
+      <input type="text" placeholder="Numero de cita" readonly="readonly" name="historiaGeneralCita" [ngModel]="historiaGeneralCita">
+    </div>
+    <div class="input-field col s6">
+      <input type="text" placeholder="Numero de la historia clinica" readonly="readonly" name="historiaGeneralID" [ngModel]="historiaGeneralID">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s6">
+      <input type="text" placeholder="Identificacion del paciente" readonly="readonly" name="pacienteID" [ngModel]="pacienteID">
+    </div>
+    <div class="input-field col s6">
+      <input type="text" placeholder="Edad del paciente" readonly="readonly" name="pacienteEdad" [ngModel]="pacienteEdad">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <textarea id="textarea1" class="materialize-textarea" placeholder="Motivo de la consulta"></textarea>
+    </div>
+  </div>
+  <div class="row">
+    <div class="center-align input-field col s6">
+      <button data-target="modalVer" class="btn modal-trigger" (click)="verAntecedentes();" type="button">Ver antecedentes</button>
+    </div>
+    <div class="center-align input-field col s6">
+      <button data-target="#modal1" class="btn modal-trigger" (click)="crearAntecedentes();" type="button">Crear antecedentes</button>
+    </div>
+    <div class="modal" id="modal1">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+  </div>
+</form>

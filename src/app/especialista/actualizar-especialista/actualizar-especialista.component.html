@@ -1,0 +1,50 @@
+<h1>Editar especialista</h1>
+<form class="col s12 border border-dark" #editarEspecialista="ngForm" (ngSubmit)="OnSubmit(editarEspecialista);">
+  <div *ngFor="let especialista of especialistas"> 
+  <div class="row">
+      <div class="input-field col s3">
+          <div>
+            <label for="myListOptions">especialidad </label>
+          <select class="browser-default border border-dark" name="especialidadId" [(ngModel)]="especialista.especialidadId">
+            <option *ngFor="let especialidades of especialidad" [ngValue]="especialidades.especialidad_Id">{{especialidades.especialidad_Nombre}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="input-field col s3">
+            <input type="number" class="validate" name="especialistaId" [(ngModel)]="especialista.especialistaId" required>
+            <label>especialista documento</label>
+          </div>
+          </div>
+          <div class="row">
+      <div class="input-field col s4" hidden>
+        <input type="date"  name="especialistaFechaIngreso" [(ngModel)]="especialista.especialistaFechaIngreso">
+        <label>Fecha de ingreso</label>
+      </div>
+      <div class="input-field col s4">
+        <input type="date" name="especialistaFechaRetiro" [(ngModel)]="especialista.especialistaFechaRetiro">
+        <label>Fecha de retiro</label>
+      </div>
+     
+    </div>
+    <div class="row">
+    
+    <div class="input-field col s3">
+        <div>
+          <label for="myListOptions">tipo vinculacion</label>
+        <select class="browser-default border border-dark" name="tipo_vinculacion" [(ngModel)]="especialista.tipo_vinculacion">
+          <option *ngFor="let vinculacion of vinculacion" [ngValue]="vinculacion.vinculacionTipoId">{{vinculacion.vinculacionTipoNombre}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="center-align input-field col s4">
+        <button class="btn-large btn-submit" type="submit">Editar especialista</button>
+      </div>
+      <div class="center-align input-field col s4">
+        <button  class="btn-large btn-secondary" type="button" [routerLink]='["/listarespecialista"]'>Cancelar</button>
+      </div>
+    </div>
+</div>
+</form>
+

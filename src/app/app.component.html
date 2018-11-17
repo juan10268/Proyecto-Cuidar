@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<header class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="row">			
+		<div class="col-lg-9 col-md-9 col-sm-12">
+			<div class="rgt_hd">					
+				<div class="main_menu">
+					<nav id="nav_menu">	
+					<div id="navbar">
+						<ul>							
+							<li><a class="icon-bar" [routerLink]="['/pagina-inicio']" class="active" href="#"><i class="fa fa-home"></i></a>
+							</li>
+
+							<ul id="menu">
+								<li> Persona.
+									<ul>
+										<li><a class="page-scroll" [routerLink]="['/agregar-persona']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Agregar Persona.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/actualizar-persona']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Actualizar Persona.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/listar-persona']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Listar Personas.</a></li>
+									</ul>
+								</li>
+							</ul>
+							
+							<ul id="menu">
+								<li> Paciente.
+									<ul>
+										<li><a class="page-scroll" [routerLink]="['/agregar-paciente']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Agregar Paciente.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/actualizar-paciente']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Actualizar Paciente.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/listar-paciente']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Listar Paciente.</a></li>
+									</ul>
+								</li>
+							</ul>
+
+							<ul id="menu">
+								<li> Especialista.
+									<ul>										
+										<li><a class="page-scroll" [routerLink]="['/agregar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Agregar Especialista.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/actualizar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Actualizar Especialista.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/listar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Listar Especialista.</a></li>
+									</ul>
+								</li>
+							</ul>
+							<ul id="menu">
+								<li>TipoConsulta.
+									<ul>										
+										<li><a class="page-scroll" [routerLink]="['/agregar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Consulta General.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/actualizar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Consulta Enfermeria.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/listar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Consulta Nutricion.</a></li>
+										<li><a class="page-scroll" [routerLink]="['/listar-especialista']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Consulta  Psicologica.</a></li>
+									</ul>
+								</li>
+							</ul>
+
+							<ul id="menu">
+								<li> Citas...
+									<ul>
+										<li><a class="page-scroll" [routerLink]="['/agregar-cita']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize">Agregar Cita.</a></li>
+									</ul>
+								</li>
+							</ul>
+
+							<li class="navbar-text pull-right"><a class="page-scroll" [routerLink]="['/pagina-inicio']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize"><i class="fa fa-window-close" aria-hidden="true"></i> Cerrar Sesión.</a></li>
+							<li class="navbar-text pull-right"><a class="page-scroll" [routerLink]="['/pagina-inicio']" routerLinkActive="active" style="color:#FFFFFF; text-transform: capitalize"><i class="fa d-inline fa-lg fa-user-circle-o"></i> Usuario. </a></li>
+							<li class="navbar-form pull-right" role="search"><a class="form-group"><input type="text" class="form-control" placeholder="Buscar.." style="color:#FFFFFF; text-transform: capitalize"></a></li>								
+						</ul>					  
+					</div>						
+					</nav>		
+				</div>
+			</div>
+		</div>	
+	</div>
+<router-outlet></router-outlet>
+</header>
+<footer id="main-footer">
+	<div class="col-lg-4 col-md-4 col-sm-4">
+			<h3>Universidad Católica De Oriente.</h3>
+			<ul>
+				<li>
+					<i class="glyphicon glyphicon-home"></i> A La Verdad, Por La Fé Y La Ciencia.
+				</li>
+				<li>
+					<i class="glyphicon glyphicon-earphone"></i> 569 90 90.
+				</li>
+				<li>
+					<i class="glyphicon glyphicon-envelope"></i> Uco.edu.co
+				</li>
+			</ul>
+		</div>
+</footer>
+</body>
+</html>
