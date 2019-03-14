@@ -2,7 +2,7 @@
 <form class="col s12 border border-dark" #registrarEspecialista="ngForm" (ngSubmit)="OnSubmit(registrarEspecialista);">
     <div style="width: 1100px;position: relative;margin-left:auto;margin-right: auto;">
     <div class="row">
-      <div class="input-field col s3">
+      <div class="input-field col s6">
           <div>
             <label for="myListOptions">especialidad </label>
           <select class="browser-default border border-dark" name="especialidadId" [(ngModel)]="especialidadId">
@@ -10,17 +10,17 @@
           </select>
         </div>
       </div>
-      <div class="input-field col s3">
+      <div class="input-field col s6">
             <input type="number" class="validate" name="especialistaId" [(ngModel)]="especialistaId" required>
             <label>especialista documento</label>
           </div>
           </div>
           <div class="row">
-      <div class="input-field col s4">
+      <div class="input-field col s6">
         <input type="date" class="validate" name="especialistaFechaIngreso" [(ngModel)]="especialistaFechaIngreso" required>
         <label>Fecha de ingreso</label>
       </div>
-      <div class="input-field col s4">
+      <div class="input-field col s6">
         <input type="date" name="especialistaFechaRetiro" [(ngModel)]="especialistaFechaRetiro">
         <label>Fecha de retiro</label>
       </div>
@@ -28,7 +28,7 @@
     </div>
     <div class="row">
     
-    <div class="input-field col s3">
+    <div class="input-field col s6">
         <div>
           <label for="myListOptions">tipo vinculacion</label>
         <select class="browser-default border border-dark" name="tipo_vinculacion" [(ngModel)]="tipo_vinculacion">

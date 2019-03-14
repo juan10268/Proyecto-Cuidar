@@ -5,7 +5,16 @@ button.btn-submit{
   width: 100%;
   border-radius: 20px 20px 20px 20px;
 }
-button.btn-submit:focus,button.btn-submit:hover{
+
+button.btn-secondary{
+  background-color: #21A359; 
+  width: 100%; 
+  border-radius: 20px 20px 20px 20px;
+}
+
+/*oscurecer el color de un boton cuando lo va a oprimir*/
+button.btn-submit:focus,button.btn-submit:hover,
+button.btn-secondary:focus,button.btn-secondary:hover{
   background-color:#007034; 
   border-radius: 20px 20px 20px 20px;
 }
@@ -70,7 +79,7 @@ nav {
 }
 
 .icon-bar a:hover {
-    background-color: #007034;
+  background-color: #007034;
 }
 
 .active {

@@ -1,8 +1,9 @@
 <h1> personas</h1>
 
-<form class="form-horizontal" #form="ngForm">
+<form class="col s12 border border-dark" #agregarPersona="ngForm" (ngSubmit)="OnSubmit(agregarPersona);">
+    <div style="width: 1100px;position: relative;margin-left:auto;margin-right: auto;">
     <div class="row">
-        <div class="input-field col s3" > 
+        <div class="input-field col s4" > 
             <div>
                 <label for="myListOptions">tipo de documento</label>
           <select class="browser-default border border-dark" name="personaTipoDocumento" [(ngModel)]="personaTipoDocumento">
@@ -11,13 +12,13 @@
           </select>
         </div>
         </div>
-      <div class="input-field col s5">
+      <div class="input-field col s4">
         <input type="number" class="validate" name="personaID" [(ngModel)]="personaID" required>
         <label>Identificacion</label>
       </div>
   
       
-      <div class="input-field col s3">
+      <div class="input-field col s4">
         <input type="date" class="validate" name="personaFechaNacimiento" [(ngModel)]="personaFechaNacimiento" required>
         <label>Fecha de nacimiento</label>
       </div>
@@ -101,5 +102,6 @@
       <div class="center-align input-field col s4">
         <button  class="btn-large btn-secondary" type="button" [routerLink]='["/listarpersona"]'>Cancelar</button>
        </div>
+    </div>
     </div>
   </form>
